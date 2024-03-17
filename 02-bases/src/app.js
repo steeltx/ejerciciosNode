@@ -5,7 +5,7 @@ const { getAge, getUuid } = require('./plugins');
 //const {getUserById} = require('./js-foundation/04-arrow');
 const { buildMakePerson } = require('./js-foundation/05-factory');
 
-const getPokemonById = require('./js-foundation/06-primises');
+const getPokemonById = require('./js-foundation/06-promises');
 
 const info = getPokemonById(1)
     .then(pokemon => console.log(pokemon))
