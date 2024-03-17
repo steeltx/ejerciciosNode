@@ -5,15 +5,25 @@ const { getAge, getUuid } = require('./plugins');
 //const {getUserById} = require('./js-foundation/04-arrow');
 const { buildMakePerson } = require('./js-foundation/05-factory');
 
-// pasar las dependencias
-const makePerson = buildMakePerson({getUuid, getAge});
+const getPokemonById = require('./js-foundation/06-primises');
 
-const obj = { name: 'John', birthdate: '1995-01-01'};
+const info = getPokemonById(1)
+    .then(pokemon => console.log(pokemon))
+    .catch((err) => console.log({err}))
+    .finally(() => console.log('Fin'));
+
+
+// ! referencia a la funcion factory y uso
+
+// pasar las dependencias
+// const makePerson = buildMakePerson({getUuid, getAge});
+
+// const obj = { name: 'John', birthdate: '1995-01-01'};
 
 // llamar la funcion
-const john = makePerson(obj);
+// const john = makePerson(obj);
 
-console.log(john);
+// console.log(john);
 
 // console.log(emailTemplate);
 
